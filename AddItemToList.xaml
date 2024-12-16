@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:vm="clr-namespace:ShoppingLista.ViewModels"
+           xmlns:local="clr-namespace:ShoppingLista"
+           x:DataType="vm:MainViewModel"
+       xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="ShoppingLista.AddItemToList"
+           xmlns:models="clr-namespace:ShoppingLista.Models"
+           Size="320,172"
+             >
+    <VerticalStackLayout Padding="10"
+                         BackgroundColor="White">
+        <HorizontalStackLayout>
+            <Label
+                Margin="0,10,0,0" 
+                Text="What you want to add?" 
+                HorizontalOptions="StartAndExpand"
+                FontSize="Medium"/>
+            <Button 
+                FontSize="Medium" 
+                BackgroundColor="Red"
+                Margin="15,0,0,0" 
+                Text="Close" 
+                HorizontalOptions="End" 
+                Clicked="Button_Clicked"/>
+        </HorizontalStackLayout>
+       
+        <Entry Placeholder="Enter Item"
+               Text="{Binding NewItem}"
+               FontSize="Medium"></Entry>
+        <Button   
+       Text="Add Item To List"            
+       HorizontalOptions="Fill"
+       Margin="0,9,0,0"    
+       FontSize="Large"
+       Command="{Binding AddToListCommand}"/>
+    </VerticalStackLayout>
+</mct:Popup>

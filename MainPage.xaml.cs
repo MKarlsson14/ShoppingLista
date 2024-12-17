@@ -12,7 +12,7 @@ namespace ShoppingLista
         {
             InitializeComponent();           
             BindingContext = vm;
-            vm.Title = "Mackes Shopping";     
+            vm.Title = "Mackes Shopping";
             vmPrivate = vm;           
         }
 

@@ -5,16 +5,30 @@
              xmlns:vm="clr-namespace:ShoppingLista.ViewModels"
              x:DataType="vm:MainViewModel"
              x:Class="ShoppingLista.MainPage"
-             Title="{Binding Title}">
-
+             Shell.NavBarIsVisible="False"           
+             >
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="10,20"
-            Spacing="30"
-            BackgroundColor="White">
-            <Label FontSize="Medium">Press the checkbox to indicate that you have the item in your basket.</Label>
+            Padding="20,0"
+            Spacing="25"
+            BackgroundColor="#0e0d1a">
             <HorizontalStackLayout>
+             <Image Source="kundkorgbla.png" 
+                    WidthRequest="120" 
+                    HeightRequest="90"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start" 
+                     />
+
+            <Label Text="{Binding Title}" 
+                   FontSize="24" 
+                   TextColor="White" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                    />
+            </HorizontalStackLayout>
+            <!--<HorizontalStackLayout>
                 <Button
                 Padding="10"
                 FontSize="Large"
@@ -31,10 +45,35 @@
                  Text="Clear List "            
                  HorizontalOptions="Fill" 
                  Command="{Binding ClearCommand}"/>
-            </HorizontalStackLayout>
+            </HorizontalStackLayout>-->
 
-            <Label FontSize="Title"
-                   Text="My Shopping List"></Label>
+            <Grid>
+                <!-- Define two columns: one to fill available space and one to auto size to content -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Add Item To List button in the first column -->
+                <Button Grid.Column="0"
+                  Padding="10"
+                  FontSize="Large"
+                  Text="Add Item To List"
+                  HorizontalOptions="Start"
+                  Clicked="AddItemToList_BtnClicked" />
+
+                <!-- Clear List button in the second column -->
+                <Button Grid.Column="1"
+                  Padding="10"
+                  FontSize="Large"
+                  Margin="0,0,0,0"
+                  BackgroundColor="Red"
+                  Text="Clear List"
+                  HorizontalOptions="End"
+                  Command="{Binding ClearCommand}" />
+            </Grid>
+
+            
             <Button 
              Padding="5"
              FontSize="Large"
@@ -43,6 +82,15 @@
              Text="Clear List Of 'Green' Items"            
              HorizontalOptions="Fill" 
              Command="{Binding DeleteItemCommand}"/>
+            
+            <Label FontSize="Title"
+              Text="My Shopping List"
+              TextColor="White"></Label>
+            <Label FontSize="Caption" 
+                   TextColor="White"
+                   Margin="0,-15,0,0"
+                   >Press the checkbox to indicate that you have the item in your basket.</Label>
+
 
             <CollectionView ItemsSource="{Binding GroceryItemList}">
                 <CollectionView.ItemTemplate>
@@ -86,7 +134,10 @@
                              Grid.Column="1" 
                              IsChecked="{Binding IsChecked}" 
                              HorizontalOptions="End" 
-                             VerticalOptions="Center" />
+                             VerticalOptions="Center"
+                             Scale="2"
+                             Color="#0e0d1a"
+                             WidthRequest="65"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

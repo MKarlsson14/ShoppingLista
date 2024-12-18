@@ -14,39 +14,20 @@
             Spacing="25"
             BackgroundColor="#0e0d1a">
             <HorizontalStackLayout>
-             <Image Source="kundkorgbla.png" 
+                <Image Source="kundkorgbla.png" 
                     WidthRequest="120" 
                     HeightRequest="90"
                     HorizontalOptions="Start" 
                     VerticalOptions="Start" 
                      />
 
-            <Label Text="{Binding Title}" 
+                <Label Text="{Binding Title}" 
                    FontSize="24" 
                    TextColor="White" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Center" 
                     />
             </HorizontalStackLayout>
-            <!--<HorizontalStackLayout>
-                <Button
-                Padding="10"
-                FontSize="Large"
-                Margin="0,5,5,5"
-                Text="Add Item To List"            
-                HorizontalOptions="Fill" 
-                Clicked="AddItemToList_BtnClicked"/>
-          
-                <Button 
-                 Padding="10"
-                 FontSize="Large"
-                 Margin="55,5,5,5"
-                 BackgroundColor="Red"
-                 Text="Clear List "            
-                 HorizontalOptions="Fill" 
-                 Command="{Binding ClearCommand}"/>
-            </HorizontalStackLayout>-->
-
             <Grid>
                 <!-- Define two columns: one to fill available space and one to auto size to content -->
                 <Grid.ColumnDefinitions>
@@ -60,7 +41,7 @@
                   FontSize="Large"
                   Text="Add Item To List"
                   HorizontalOptions="Start"
-                  Clicked="AddItemToList_BtnClicked" />
+                  Command="{Binding AddItemToListCommand}" />
 
                 <!-- Clear List button in the second column -->
                 <Button Grid.Column="1"
@@ -111,7 +92,7 @@
                                  Value="True">
                                     <Setter 
                                      Property="BackgroundColor" 
-                                     Value="LightGreen" />
+                                     Value="#68bd83" />
                                 </DataTrigger>
                                 <DataTrigger 
                                  TargetType="Grid" 
@@ -119,7 +100,7 @@
                                  Value="False">
                                     <Setter 
                                      Property="BackgroundColor" 
-                                     Value="LightCoral" />
+                                     Value="#7a81c4" />
                                 </DataTrigger>
                             </Grid.Triggers>
                             

@@ -15,11 +15,6 @@ namespace ShoppingLista
             vm.Title = "Mackes Shopping";
             vmPrivate = vm;           
         }
-
-        private void AddItemToList_BtnClicked(object sender, EventArgs e)
-        {
-            this.ShowPopup(new AddItemToList(vmPrivate));
-        }
     }
 
 }

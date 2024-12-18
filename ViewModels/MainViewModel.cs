@@ -86,5 +86,11 @@ namespace ShoppingLista.ViewModels
                "No item was added to the list!".ToUpper(),
                 "OK");
         }
+
+        [RelayCommand]
+        async Task AddItemToList()
+        {
+          await Application.Current.MainPage.ShowPopupAsync(new AddItemToList(this));
+        }
     }
 }

@@ -29,13 +29,12 @@
                     />
             </HorizontalStackLayout>
             <Grid>
-                <!-- Define two columns: one to fill available space and one to auto size to content -->
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-
-                <!-- Add Item To List button in the first column -->
+                
                 <Button Grid.Column="0"
                   Padding="10"
                   FontSize="Large"
@@ -43,7 +42,6 @@
                   HorizontalOptions="Start"
                   Command="{Binding AddItemToListCommand}" />
 
-                <!-- Clear List button in the second column -->
                 <Button Grid.Column="1"
                   Padding="10"
                   FontSize="Large"
